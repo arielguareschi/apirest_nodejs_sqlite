@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import itensRouter from './routers/itens-router'
+import facturasRouter from './routers/factura-router'
 
 const PORT = process.env.PORT || 4000
 const HOSTNAME = process.env.HOSTNAME || 'http://localhost'
@@ -20,6 +21,8 @@ app.use(cors({
 }))
 
 app.use('/api', itensRouter)
+app.use('/api', facturasRouter)
+
 
 app.use((req, res) => {
     res.status(404)
